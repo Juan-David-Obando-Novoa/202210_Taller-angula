@@ -29,7 +29,7 @@ describe('BookListComponent', () => {
     component = fixture.componentInstance;
 
     component.courses = [
-      new Course(faker.lorem.sentence(), faker.name.firstName(), faker.datatype.number())
+      new Course(faker.name.firstName(), faker.lorem.sentence(), faker.name.firstName(), faker.datatype.number())
     ]
 
     fixture.detectChanges();

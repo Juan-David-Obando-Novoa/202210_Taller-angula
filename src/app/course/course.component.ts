@@ -11,20 +11,21 @@ import { dataCourses } from './dataCourses';
 export class CourseComponent implements OnInit {
 
   courses: Array<Course> = [];
-  constructor(private courseService: CourseService) { }
-
+  constructor() { }
   getCourseList(): Array<Course> {
     return dataCourses;
   }
 
-  getCourses() {
-    this.courseService.getCourses().subscribe(courses => {
-      this.courses = courses;
+  promedio(): number{
+    let promedio = 0
+    dataCourses.forEach((course) => {
+      promedio += course.credits
     });
-  }
 
+    return promedio
+  }
   ngOnInit() {
-    this.getCourses();
+    this.courses = this.getCourseList();
   }
 
 }

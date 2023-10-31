@@ -3,13 +3,17 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="h4">Course's Name</th>
-          <th class="h4">Professor's Name</th>
-          <th class="h4">Credits</th>
+          <th class="h4">#</th>
+          <th class="h4" id ="azul">Name</th>
+          <th class="h4">channel</th>
+          <th class="h4">Seasons</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let c of courses">
+          <td>
+            <dd>{{ c.id }}</dd>
+          </td>
           <td>
             <dd>{{ c.name }}</dd>
           </td>
@@ -18,8 +22,12 @@
           </td>
           <td>
             <dd>{{ c.credits }}</dd>
-          </td>
+          </td>     
         </tr>
+        <div> 
+          <h4  >Promedio de series</h4>
+          <h4  >{{ promedio() }}</h4>
+        </div>
       </tbody>
     </table>
   </div>
